@@ -66,6 +66,22 @@ internal static class Program
         (double rootX, double rootY) = Bai05.MenuCalculator.SquareRoots(9, 16);
         Test.Equal(3d, rootX, "Bai05 can bac hai x");
         Test.Equal(4d, rootY, "Bai05 can bac hai y");
+        Test.Equal(-2, Bai06.NumberUtilities.Max(-9, -2, -2), "Bai06 tim max voi so am va trung nhau");
+        Test.True(Bai07.NumberUtilities.IsPrime(2), "Bai07 nhan dien so nguyen to 2");
+        Test.True(Bai07.NumberUtilities.IsPrime(17), "Bai07 nhan dien so nguyen to 17");
+        foreach (int value in new[] { -1, 0, 1, 9 })
+        {
+            Test.True(!Bai07.NumberUtilities.IsPrime(value), $"Bai07 loai {value} khoi tap so nguyen to");
+        }
+
+        double first = 1.5;
+        double second = -2;
+        Bai08.NumberUtilities.Swap(ref first, ref second);
+        Test.Equal(-2d, first, "Bai08 gia tri thu nhat sau hoan vi");
+        Test.Equal(1.5d, second, "Bai08 gia tri thu hai sau hoan vi");
+        Bai09.NumberUtilities.FindMinMax(4.5, -3, 4.5, out double min, out double max);
+        Test.Equal(-3d, min, "Bai09 tim min");
+        Test.Equal(4.5d, max, "Bai09 tim max");
         return Test.Finish();
     }
 }

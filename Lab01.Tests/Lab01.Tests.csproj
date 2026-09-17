@@ -7,5 +7,9 @@
     <ProjectReference Include="..\Bai03\Bai03.csproj" />
     <ProjectReference Include="..\Bai04\Bai04.csproj" />
     <ProjectReference Include="..\Bai05\Bai05.csproj" />
+    <ProjectReference Include="..\Bai06\Bai06.csproj" />
+    <ProjectReference Include="..\Bai07\Bai07.csproj" />
+    <ProjectReference Include="..\Bai08\Bai08.csproj" />
+    <ProjectReference Include="..\Bai09\Bai09.csproj" />
   </ItemGroup>
 </Project>
