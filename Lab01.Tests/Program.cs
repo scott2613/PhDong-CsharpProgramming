@@ -82,6 +82,14 @@ internal static class Program
         Bai09.NumberUtilities.FindMinMax(4.5, -3, 4.5, out double min, out double max);
         Test.Equal(-3d, min, "Bai09 tim min");
         Test.Equal(4.5d, max, "Bai09 tim max");
+        Test.True(Bai10.StringUtilities.IsPalindrome(string.Empty), "Bai10 chuoi rong la doi xung");
+        Test.True(Bai10.StringUtilities.IsPalindrome("level"), "Bai10 nhan dien chuoi doi xung");
+        Test.True(!Bai10.StringUtilities.IsPalindrome("hello"), "Bai10 nhan dien chuoi khong doi xung");
+        Test.Equal("gnôĐ", Bai11.StringUtilities.Reverse("Đông"), "Bai11 dao chuoi co ky tu Viet");
+        (string lower, string upper, int wordCount) = Bai12.StringUtilities.Analyze("  Nguyễn\tHuỳnh\nPhương Đông  ");
+        Test.Equal("  nguyễn\thuỳnh\nphương đông  ", lower, "Bai12 chuyen chu thuong");
+        Test.Equal("  NGUYỄN\tHUỲNH\nPHƯƠNG ĐÔNG  ", upper, "Bai12 chuyen chu hoa");
+        Test.Equal(4, wordCount, "Bai12 dem tu voi khoang trang hon hop");
         return Test.Finish();
     }
 }
