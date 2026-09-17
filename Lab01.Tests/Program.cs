@@ -58,6 +58,14 @@ internal static class Program
 {
     private static int Main()
     {
+        Test.Equal(343d, Bai03.Power.Calculate(7, 3), "Bai03 tinh 7 mu 3");
+        Test.True(!Bai04.PowerInput.TryCalculate("abc", "3", out _), "Bai04 tu choi x khong phai so nguyen");
+        Test.True(Bai04.PowerInput.TryCalculate("7", "3", out double result), "Bai04 chap nhan hai so nguyen");
+        Test.Equal(343d, result, "Bai04 tinh luy thua khi du lieu hop le");
+        Test.Equal(8d, Bai05.MenuCalculator.Power(2, 3), "Bai05 tinh luy thua");
+        (double rootX, double rootY) = Bai05.MenuCalculator.SquareRoots(9, 16);
+        Test.Equal(3d, rootX, "Bai05 can bac hai x");
+        Test.Equal(4d, rootY, "Bai05 can bac hai y");
         return Test.Finish();
     }
 }
