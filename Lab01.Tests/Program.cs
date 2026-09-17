@@ -35,6 +35,23 @@ internal static class Test
         Equal(string.Join("|", expected), string.Join("|", actual), name);
     }
 
+    public static void Throws<TException>(Action action, string name) where TException : Exception
+    {
+        try
+        {
+            action();
+            Fail(name, $"không phát sinh {typeof(TException).Name}");
+        }
+        catch (TException)
+        {
+            Pass(name);
+        }
+        catch (Exception exception)
+        {
+            Fail(name, $"phát sinh {exception.GetType().Name} thay vì {typeof(TException).Name}");
+        }
+    }
+
     public static int Finish()
     {
         Console.WriteLine($"Tong: {passed} dat, {failed} loi");
@@ -90,6 +107,33 @@ internal static class Program
         Test.Equal("  nguyễn\thuỳnh\nphương đông  ", lower, "Bai12 chuyen chu thuong");
         Test.Equal("  NGUYỄN\tHUỲNH\nPHƯƠNG ĐÔNG  ", upper, "Bai12 chuyen chu hoa");
         Test.Equal(4, wordCount, "Bai12 dem tu voi khoang trang hon hop");
+        var student = new Bai13.Student("3124411071", "Nguyễn Huỳnh Phương Đông", "TP. Hồ Chí Minh", 2);
+        string studentDisplay = student.Display();
+        Test.True(studentDisplay.Contains("3124411071") && studentDisplay.Contains("Nguyễn Huỳnh Phương Đông") && studentDisplay.Contains("TP. Hồ Chí Minh") && studentDisplay.Contains("2"), "Bai13 xuat du thong tin sinh vien");
+
+        var employee = new Bai14.Employee("Nguyễn Văn A", 1_000_000m, 3);
+        Test.Equal(700_000m, employee.CalculateSalary(), "Bai14 tru luong theo ngay vang");
+        var heavilyAbsent = new Bai14.Employee("Trần Văn B", 200_000m, 5);
+        Test.Equal(0m, heavilyAbsent.CalculateSalary(), "Bai14 khong de luong am");
+
+        (int arrayMin, int arrayMax) = Bai15.ArrayUtilities.MinMax(new[] { 4, -8, 11, 11, 2 });
+        Test.Equal(-8, arrayMin, "Bai15 tim min trong mang");
+        Test.Equal(11, arrayMax, "Bai15 tim max trong mang");
+        Test.SequenceEqual(new[] { 2, 11, 11 }, Bai15.ArrayUtilities.GetPrimes(new[] { 4, 2, 11, -3, 11 }), "Bai15 loc so nguyen to va giu thu tu");
+        Test.Throws<ArgumentException>(() => Bai15.ArrayUtilities.MinMax(Array.Empty<int>()), "Bai15 tu choi mang rong");
+
+        Test.SequenceEqual(
+            new[] { "Lê Đông", "Nguyễn An", "Trần Bình" },
+            Bai16.NameUtilities.SortAscending(new[] { "Trần Bình", "Nguyễn An", "Lê Đông" }),
+            "Bai16 sap xep ten theo tieng Viet");
+
+        int[,] matrix = Bai17.MatrixUtilities.Generate(3, 4, 2026);
+        Test.True(matrix.Cast<int>().All(value => value is >= 10 and <= 100), "Bai17 sinh gia tri trong doan 10 den 100");
+        Bai17.MatrixUtilities.SplitEvenOdd(matrix, out int[] even, out int[] odd);
+        Test.Equal(matrix.Length, even.Length + odd.Length, "Bai17 chia du phan tu chan le");
+        Test.True(even.All(value => value % 2 == 0), "Bai17 mang chan chi chua so chan");
+        Test.True(odd.All(value => value % 2 != 0), "Bai17 mang le chi chua so le");
+        Test.Throws<ArgumentOutOfRangeException>(() => Bai17.MatrixUtilities.Generate(0, 2, 1), "Bai17 tu choi kich thuoc khong hop le");
         return Test.Finish();
     }
 }

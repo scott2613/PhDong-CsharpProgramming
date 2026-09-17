@@ -14,5 +14,10 @@
     <ProjectReference Include="..\Bai10\Bai10.csproj" />
     <ProjectReference Include="..\Bai11\Bai11.csproj" />
     <ProjectReference Include="..\Bai12\Bai12.csproj" />
+    <ProjectReference Include="..\Bai13\Bai13.csproj" />
+    <ProjectReference Include="..\Bai14\Bai14.csproj" />
+    <ProjectReference Include="..\Bai15\Bai15.csproj" />
+    <ProjectReference Include="..\Bai16\Bai16.csproj" />
+    <ProjectReference Include="..\Bai17\Bai17.csproj" />
   </ItemGroup>
 </Project>
