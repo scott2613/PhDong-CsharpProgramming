@@ -1,3 +1,4 @@
+using System;
 using System.Globalization;
 
 namespace Bai16;
@@ -54,4 +55,3 @@ internal static class Program
         }
     }
 }
-

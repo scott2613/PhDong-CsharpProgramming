@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai13;
 
 public sealed class Student
@@ -58,4 +60,3 @@ internal static class Program
         }
     }
 }
-

@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai02;
 
 internal static class Program
@@ -18,4 +20,3 @@ internal static class Program
         Console.WriteLine($"Chào bạn {hoTen}!");
     }
 }
-

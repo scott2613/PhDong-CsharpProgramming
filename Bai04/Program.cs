@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai04;
 
 public static class PowerInput
@@ -35,4 +37,3 @@ internal static class Program
         Console.WriteLine($"Kết quả {xText} mũ {yText} là: {result}");
     }
 }
-

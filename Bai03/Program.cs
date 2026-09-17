@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai03;
 
 public static class Power
@@ -31,4 +33,3 @@ internal static class Program
         }
     }
 }
-

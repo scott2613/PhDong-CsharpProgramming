@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace Bai17;
 
 public static class MatrixUtilities

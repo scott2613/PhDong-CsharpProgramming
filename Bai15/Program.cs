@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace Bai15;
 
 public static class ArrayUtilities
@@ -80,4 +83,3 @@ internal static class Program
         return value;
     }
 }
-

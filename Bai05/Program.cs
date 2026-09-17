@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai05;
 
 public static class MenuCalculator

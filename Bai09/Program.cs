@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai09;
 
 public static class NumberUtilities

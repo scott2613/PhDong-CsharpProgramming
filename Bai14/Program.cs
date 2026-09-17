@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai14;
 
 public sealed class Employee
@@ -55,4 +57,3 @@ internal static class Program
         }
     }
 }
-

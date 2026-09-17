@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai10;
 
 public static class StringUtilities
@@ -32,4 +34,3 @@ internal static class Program
             : "Chuỗi đã nhập không phải là chuỗi đối xứng.");
     }
 }
-

@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai07;
 
 public static class NumberUtilities
@@ -34,4 +36,3 @@ internal static class Program
             : $"{n} không phải là số nguyên tố.");
     }
 }
-

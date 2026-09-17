@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai11;
 
 public static class StringUtilities
@@ -22,4 +24,3 @@ internal static class Program
         Console.WriteLine($"Chuỗi đảo ngược: {StringUtilities.Reverse(value)}");
     }
 }
-

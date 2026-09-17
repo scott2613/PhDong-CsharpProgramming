@@ -1,3 +1,5 @@
+using System;
+
 namespace Bai06;
 
 public static class NumberUtilities
@@ -33,4 +35,3 @@ internal static class Program
         }
     }
 }
-
