@@ -1,0 +1,3 @@
+<Project>
+  <!-- Chặn cấu hình của Lab01 ở thư mục cha; mọi project bên dưới tự khai báo cấu hình. -->
+</Project>
