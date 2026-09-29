@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IsTestProject>true</IsTestProject><IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2"><PrivateAssets>all</PrivateAssets></PackageReference>
+    <ProjectReference Include="../MyLib/MyLib.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai01_01_TuoiSinhVien/Bai01_01_TuoiSinhVien.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai01_02_Point/Bai01_02_Point.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai01_03_Person/Bai01_03_Person.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai01_04_PhanSo/Bai01_04_PhanSo.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai01_05_DonThuc/Bai01_05_DonThuc.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai02_01_ArrayPoint/Bai02_01_ArrayPoint.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai02_02_PersonList/Bai02_02_PersonList.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai02_03_DaySo/Bai02_03_DaySo.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai02_04_MaTran/Bai02_04_MaTran.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai02_03b_DaThuc/Bai02_03b_DaThuc.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai02_04b_DayPhanSo/Bai02_04b_DayPhanSo.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai02_05_LuongPhongBan/Bai02_05_LuongPhongBan.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai03_01_ArraySort/Bai03_01_ArraySort.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai03_02_InterfaceSort/Bai03_02_InterfaceSort.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai03_03_DelegateSort/Bai03_03_DelegateSort.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai03_04_ConsoleMenu/Bai03_04_ConsoleMenu.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai03_05_LuongKeThua/Bai03_05_LuongKeThua.csproj" />
+    <ProjectReference Include="../../ThucHanh02_OOP/Bai03_06_ThiSinh/Bai03_06_ThiSinh.csproj" />
+  </ItemGroup>
+</Project>
