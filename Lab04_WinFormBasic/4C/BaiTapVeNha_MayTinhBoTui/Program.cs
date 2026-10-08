@@ -1,3 +1,4 @@
+// Điểm khởi động của bài tập về nhà máy tính bỏ túi: cấu hình WinForms và mở form chính.
 using System;
 using System.Windows.Forms;
 

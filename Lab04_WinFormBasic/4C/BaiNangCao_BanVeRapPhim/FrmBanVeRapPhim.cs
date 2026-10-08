@@ -1,3 +1,4 @@
+// Form của bài nâng cao bán vé rạp phim: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -13,6 +14,7 @@ public sealed class FrmBanVeRapPhim : Form
     private readonly Button[] _seatButtons = new Button[15];
     private readonly Label _lblTotal = new();
 
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmBanVeRapPhim()
     {
         Text = "Bán vé rạp chiếu phim";
@@ -86,6 +88,7 @@ public sealed class FrmBanVeRapPhim : Form
         };
     }
 
+    // Hỏi lại người dùng trước khi đóng để tránh mất dữ liệu đang nhập.
     private void ConfirmClosing(object? sender, FormClosingEventArgs e)
     {
         DialogResult result = MessageBox.Show("Bạn có muốn kết thúc chương trình?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);

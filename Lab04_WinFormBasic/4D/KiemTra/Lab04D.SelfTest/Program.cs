@@ -1,3 +1,4 @@
+// Chạy các tình huống kiểm tra tự động để xác nhận phần nghiệp vụ hoạt động đúng yêu cầu.
 using System;
 using Lab04D.Core;
 
@@ -9,10 +10,12 @@ internal static class Program
 
     private static void Main()
     {
+        // Kiểm tra nhập số theo cả dấu chấm và dấu phẩy thường dùng trên Windows.
         Check(NumericValidation.TryParseDouble("12.5", out double dot) && dot == 12.5, "Nhập số dùng dấu chấm");
         Check(NumericValidation.TryParseDouble("12,5", out double comma) && comma == 12.5, "Nhập số dùng dấu phẩy");
         Check(!NumericValidation.TryParseDouble("abc", out _), "Từ chối chuỗi không phải số");
 
+        // Kiểm tra bốn phép toán cơ bản và nhánh lỗi chia cho 0.
         var calculation = new TinhToan(8, 2);
         Check(calculation.Cong() == 10, "Phép cộng");
         Check(calculation.Tru() == 6, "Phép trừ");
@@ -21,11 +24,13 @@ internal static class Program
         calculation.B = 0;
         Check(!calculation.TryCalculate(PhepToan.Chia, out _, out _), "Chặn chia cho 0");
 
+        // Mỗi tổ hợp CheckBox phải được quy đổi về đúng kiểu chữ hiển thị.
         Check(LabelStyleResolver.Resolve(true, false, false, false) == LabelTextStyle.Regular, "Kiểu chữ thường");
         Check(LabelStyleResolver.Resolve(false, true, false, false) == LabelTextStyle.Bold, "Kiểu chữ đậm");
         Check(LabelStyleResolver.Resolve(false, false, true, false) == LabelTextStyle.Italic, "Kiểu chữ nghiêng");
         Check(LabelStyleResolver.Resolve(false, true, true, false) == LabelTextStyle.BoldItalic, "Kiểu chữ đậm nghiêng");
 
+        // Bao quát các trường hợp nghiệm của phương trình bậc nhất và bậc hai.
         Check(PhuongTrinh.SolveLinear(2, -4).Contains("x = 2", StringComparison.Ordinal), "Phương trình bậc nhất một nghiệm");
         Check(PhuongTrinh.SolveLinear(0, 0).Contains("vô số", StringComparison.Ordinal), "Phương trình bậc nhất vô số nghiệm");
         Check(PhuongTrinh.SolveLinear(0, 2).Contains("vô nghiệm", StringComparison.Ordinal), "Phương trình bậc nhất vô nghiệm");
@@ -34,6 +39,7 @@ internal static class Program
         Check(PhuongTrinh.SolveQuadratic(1, 0, 1).Contains("vô nghiệm", StringComparison.Ordinal), "Phương trình bậc hai vô nghiệm");
         Check(PhuongTrinh.SolveQuadratic(0, 2, -4).Contains("x = 2", StringComparison.Ordinal), "Bậc hai suy biến về bậc nhất");
 
+        // Thực hiện liên tiếp các thao tác để bảo đảm trạng thái mảng được cập nhật đồng bộ.
         Check(MangSoNguyen.TryParse("5 1 4 2 3", out MangSoNguyen? parsedArray, out _), "Nhập mảng số nguyên hợp lệ");
         Check(!MangSoNguyen.TryParse("1 hai 3", out _, out _), "Từ chối phần tử không phải số nguyên");
         parsedArray!.SortAscending();
@@ -52,6 +58,7 @@ internal static class Program
         Check(parsedArray.EvenSum == 10 && parsedArray.OddSum == 12, "Tính tổng chẵn và tổng lẻ");
         Check(parsedArray.Maximum == 8 && parsedArray.Minimum == 2, "Tìm giá trị lớn nhất và nhỏ nhất");
 
+        // Đối chiếu đơn Cafe thường, đơn sinh viên và các dữ liệu bắt buộc.
         var regularCafeOrder = new CafeOrder
         {
             CustomerName = "Nguyễn An",
@@ -75,6 +82,7 @@ internal static class Program
         Check(!new CafeOrder { CustomerName = "An", GuestCount = 0, Drink = CafeDrink.CafeDen, Foods = new[] { CafeFood.BanhMyCa } }.TryValidate(out _), "Từ chối số khách không hợp lệ");
         Check(!new CafeOrder { CustomerName = "An", GuestCount = 1, Drink = CafeDrink.CafeDen }.TryValidate(out _), "Yêu cầu chọn thức ăn");
 
+        // Kiểm tra tiền phòng riêng và hóa đơn có đầy đủ tiện nghi, dịch vụ.
         var singleRoom = new HotelBill { CustomerName = "An", Address = "TP HCM", Days = 2, RoomType = HotelRoomType.Single };
         Check(singleRoom.Total == 600_000, "Tính tiền phòng đơn");
         var fullServiceRoom = new HotelBill

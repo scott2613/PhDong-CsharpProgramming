@@ -1,3 +1,4 @@
+// Điểm khởi động của bài mẫu phép tính với RadioButton: cấu hình WinForms và mở form chính.
 using System;
 using System.Windows.Forms;
 

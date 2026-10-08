@@ -1,3 +1,4 @@
+// Form của bài tập về nhà máy tính bỏ túi: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ public sealed class FrmMayTinhBoTui : Form
     private readonly PocketCalculator _calculator = new();
     private readonly TextBox _display = new();
 
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmMayTinhBoTui()
     {
         Text = "Máy tính bỏ túi";

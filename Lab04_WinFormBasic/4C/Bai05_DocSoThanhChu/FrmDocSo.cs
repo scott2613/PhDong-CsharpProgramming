@@ -1,3 +1,4 @@
+// Form của Bài 5 đọc số thành chữ: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -12,6 +13,7 @@ public sealed class FrmDocSo : Form
     private readonly TextBox _txtWords = new();
     private readonly ErrorProvider _errors = new();
 
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmDocSo()
     {
         Text = "Đọc số thành chữ";
@@ -53,6 +55,7 @@ public sealed class FrmDocSo : Form
 
     private void ClearForm(object? sender, EventArgs e) { _txtNumber.Clear(); _txtWords.Clear(); _errors.Clear(); _txtNumber.Focus(); }
 
+    // Hỏi lại người dùng trước khi đóng để tránh mất dữ liệu đang nhập.
     private void ConfirmClosing(object? sender, FormClosingEventArgs e)
     {
         DialogResult result = MessageBox.Show("Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);

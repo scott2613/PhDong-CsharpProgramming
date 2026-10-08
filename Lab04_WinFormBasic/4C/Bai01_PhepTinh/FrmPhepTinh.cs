@@ -1,3 +1,4 @@
+// Form của Bài 1 phép tính: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Globalization;
 using System.Windows.Forms;
@@ -7,6 +8,7 @@ namespace Bai01_PhepTinh;
 
 public partial class FrmPhepTinh : Form
 {
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmPhepTinh()
     {
         InitializeComponent();

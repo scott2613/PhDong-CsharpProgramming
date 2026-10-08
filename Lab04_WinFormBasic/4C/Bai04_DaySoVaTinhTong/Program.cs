@@ -1,3 +1,4 @@
+// Điểm khởi động của Bài 4 dãy số và tính tổng: cấu hình WinForms và mở form chính.
 using System;
 using System.Windows.Forms;
 

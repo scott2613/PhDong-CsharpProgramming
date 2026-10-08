@@ -1,3 +1,4 @@
+// Form của bài mẫu phép tính với RadioButton: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -18,6 +19,7 @@ public sealed class FrmPhepTinhRadio : Form
     private readonly RadioButton _rdoDivide = new();
     private readonly ErrorProvider _errors = new();
 
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmPhepTinhRadio()
     {
         Text = "Cộng trừ nhân chia bằng RadioButton";
@@ -97,6 +99,7 @@ public sealed class FrmPhepTinhRadio : Form
         _errors.SetError(box, valid ? string.Empty : message);
     }
 
+    // Lọc ký tự ngay khi nhập để giảm lỗi trước bước kiểm tra chính.
     private static void NumericKeyPress(object? sender, KeyPressEventArgs e)
     {
         if (sender is not TextBox box) return;
@@ -105,6 +108,7 @@ public sealed class FrmPhepTinhRadio : Form
         if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !sign && !separator) e.Handled = true;
     }
 
+    // Hỏi lại người dùng trước khi đóng để tránh mất dữ liệu đang nhập.
     private void ConfirmClosing(object? sender, FormClosingEventArgs e)
     {
         DialogResult result = MessageBox.Show("Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);

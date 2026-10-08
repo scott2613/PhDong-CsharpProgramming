@@ -1,3 +1,4 @@
+// Form của bài mẫu định dạng Label: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ public sealed class FrmDinhDangLabel : Form
     private readonly RadioButton _rdoGreen = new();
     private readonly RadioButton _rdoBlue = new();
 
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmDinhDangLabel()
     {
         Text = "Định dạng Label";
@@ -86,6 +88,7 @@ public sealed class FrmDinhDangLabel : Form
         _preview.ForeColor = selectedColor.Tag is Color color ? color : SystemColors.ControlText;
     }
 
+    // Hỏi lại người dùng trước khi đóng để tránh mất dữ liệu đang nhập.
     private void ConfirmClosing(object? sender, FormClosingEventArgs e)
     {
         DialogResult result = MessageBox.Show("Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);

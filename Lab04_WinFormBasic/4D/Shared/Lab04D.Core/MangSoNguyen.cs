@@ -1,3 +1,4 @@
+// Lớp nghiệp vụ dùng chung của Lab04D, được tách khỏi giao diện để dễ tái sử dụng và kiểm tra.
 using System;
 using System.Collections.Generic;
 using System.Globalization;

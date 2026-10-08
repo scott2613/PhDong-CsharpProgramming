@@ -1,3 +1,4 @@
+// Điểm khởi động của bài mẫu định dạng Label: cấu hình WinForms và mở form chính.
 using System;
 using System.Windows.Forms;
 

@@ -1,3 +1,4 @@
+// Form của Bài 4 dãy số và tính tổng: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Drawing;
 using System.Linq;
@@ -17,6 +18,7 @@ public sealed class FrmDaySo : Form
     private readonly TextBox _txtOdd = new();
     private readonly ErrorProvider _errors = new();
 
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmDaySo()
     {
         Text = "Dãy số và tính tổng";
@@ -72,6 +74,7 @@ public sealed class FrmDaySo : Form
         _txtNumber.Focus();
     }
 
+    // Lọc ký tự ngay khi nhập để giảm lỗi trước bước kiểm tra chính.
     private static void IntegerKeyPress(object? sender, KeyPressEventArgs e)
     {
         TextBox box = (TextBox)sender!;
@@ -79,6 +82,7 @@ public sealed class FrmDaySo : Form
         if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !signAtStart) e.Handled = true;
     }
 
+    // Hỏi lại người dùng trước khi đóng để tránh mất dữ liệu đang nhập.
     private void ConfirmClosing(object? sender, FormClosingEventArgs e)
     {
         DialogResult result = MessageBox.Show("Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);

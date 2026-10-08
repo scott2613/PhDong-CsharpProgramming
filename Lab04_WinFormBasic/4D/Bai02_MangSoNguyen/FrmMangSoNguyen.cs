@@ -1,3 +1,4 @@
+// Form của Bài 2 mảng số nguyên: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -32,6 +33,7 @@ public sealed class FrmMangSoNguyen : Form
     private readonly ErrorProvider _errors = new();
     private MangSoNguyen? _array;
 
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmMangSoNguyen()
     {
         Text = "Mảng số nguyên";
@@ -227,5 +229,6 @@ public sealed class FrmMangSoNguyen : Form
     private void ConfigureValueLabel(Label value, string text, int x, int y, Control parent) { AddLabel(text, x, y, parent); value.AutoSize = true; value.Text = "0"; value.Font = new Font("Segoe UI", 10.5F, FontStyle.Bold); value.ForeColor = Color.Navy; value.Location = new Point(145, y); parent.Controls.Add(value); }
     private static void ConfigureRadio(RadioButton radio, string text, int x, int y, bool selected = false) { radio.Text = text; radio.AutoSize = true; radio.Location = new Point(x, y); radio.Checked = selected; }
     private void ConfigureTextBox(TextBox box, int x, int y, int width, Control? parent = null) { box.Location = new Point(x, y); box.Size = new Size(width, 29); (parent?.Controls ?? Controls).Add(box); }
+    // Hỏi lại người dùng trước khi đóng để tránh mất dữ liệu đang nhập.
     private void ConfirmClosing(object? sender, FormClosingEventArgs e) { if (MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) e.Cancel = true; }
 }

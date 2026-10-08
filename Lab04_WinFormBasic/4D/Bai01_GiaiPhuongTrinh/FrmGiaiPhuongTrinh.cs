@@ -1,3 +1,4 @@
+// Form của Bài 1 giải phương trình: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ public sealed class FrmGiaiPhuongTrinh : Form
     private readonly ErrorProvider _errors = new();
     private bool _hasSolved;
 
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmGiaiPhuongTrinh()
     {
         Text = "Giải phương trình bậc 1 và bậc 2";
@@ -106,6 +108,7 @@ public sealed class FrmGiaiPhuongTrinh : Form
         _btnSolve.Enabled = false;
     }
 
+    // Lọc ký tự ngay khi nhập để giảm lỗi trước bước kiểm tra chính.
     private static void NumericKeyPress(object? sender, KeyPressEventArgs e)
     {
         if (sender is not TextBox box) return;
@@ -114,6 +117,7 @@ public sealed class FrmGiaiPhuongTrinh : Form
         if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !sign && !separator) e.Handled = true;
     }
 
+    // Hỏi lại người dùng trước khi đóng để tránh mất dữ liệu đang nhập.
     private void ConfirmClosing(object? sender, FormClosingEventArgs e)
     {
         DialogResult result = MessageBox.Show("Bạn có muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);

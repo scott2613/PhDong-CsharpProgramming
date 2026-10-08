@@ -1,3 +1,4 @@
+// Form của bài nâng cao Cafe Sinh Viên: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -25,6 +26,7 @@ public sealed class FrmCafeSinhVien : Form
     private int _totalGuests;
     private decimal _totalRevenue;
 
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmCafeSinhVien()
     {
         Text = "Thanh toán tiền - Cafe Sinh Viên";
@@ -181,6 +183,8 @@ public sealed class FrmCafeSinhVien : Form
     private static void ConfigureButton(Button button, int x, int y, int width, EventHandler click) { button.Location = new Point(x, y); button.Size = new Size(width, 42); button.Click += click; }
     private void ConfigureSummary(Label label, int x, int y, int width) { label.Text = "0"; label.AutoSize = false; label.TextAlign = ContentAlignment.MiddleLeft; label.BorderStyle = BorderStyle.FixedSingle; label.BackColor = Color.FromArgb(245, 248, 252); label.Location = new Point(x, y); label.Size = new Size(width, 32); Controls.Add(label); }
     private void ShowError(Control control, string message) { _errors.SetError(control, message); MessageBox.Show(message, "Dữ liệu không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+    // Lọc ký tự ngay khi nhập để giảm lỗi trước bước kiểm tra chính.
     private static void WholeNumberKeyPress(object? sender, KeyPressEventArgs e) { if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true; }
+    // Hỏi lại người dùng trước khi đóng để tránh mất dữ liệu đang nhập.
     private void ConfirmClosing(object? sender, FormClosingEventArgs e) { if (MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) e.Cancel = true; }
 }

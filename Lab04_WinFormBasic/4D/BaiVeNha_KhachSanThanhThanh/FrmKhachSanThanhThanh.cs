@@ -1,3 +1,4 @@
+// Form của bài về nhà Khách sạn Thanh Thanh: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -31,6 +32,7 @@ public sealed class FrmKhachSanThanhThanh : Form
     private decimal _dailyRevenue;
     private bool _paidCurrentGuest;
 
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmKhachSanThanhThanh()
     {
         Text = "Khách sạn Thanh Thanh - Trả phòng";
@@ -170,6 +172,8 @@ public sealed class FrmKhachSanThanhThanh : Form
     private static void ConfigureTextBox(TextBox box, int x, int y, int width, Control parent) { box.Location = new Point(x, y); box.Size = new Size(width, 29); parent.Controls.Add(box); }
     private static void ConfigureResultLabel(Label label, int x, int y, int width, Control parent) { label.Text = "0"; label.TextAlign = ContentAlignment.MiddleLeft; label.BorderStyle = BorderStyle.FixedSingle; label.BackColor = Color.FromArgb(245, 248, 252); label.Location = new Point(x, y); label.Size = new Size(width, 32); parent.Controls.Add(label); }
     private void ShowError(Control control, string message) { _errors.SetError(control, message); MessageBox.Show(message, "Dữ liệu không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+    // Lọc ký tự ngay khi nhập để giảm lỗi trước bước kiểm tra chính.
     private static void WholeNumberKeyPress(object? sender, KeyPressEventArgs e) { if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true; }
+    // Hỏi lại người dùng trước khi đóng để tránh mất dữ liệu đang nhập.
     private void ConfirmClosing(object? sender, FormClosingEventArgs e) { if (MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) e.Cancel = true; }
 }

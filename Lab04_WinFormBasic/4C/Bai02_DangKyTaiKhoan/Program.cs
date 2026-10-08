@@ -1,3 +1,4 @@
+// Điểm khởi động của Bài 2 đăng ký tài khoản: cấu hình WinForms và mở form chính.
 using System;
 using System.Windows.Forms;
 

@@ -1,3 +1,4 @@
+// Form của Bài 2 đăng ký tài khoản: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Windows.Forms;
 using Lab04.Core;
@@ -6,6 +7,7 @@ namespace Bai02_DangKyTaiKhoan;
 
 public partial class FrmDangKyTaiKhoan : Form
 {
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmDangKyTaiKhoan()
     {
         InitializeComponent();

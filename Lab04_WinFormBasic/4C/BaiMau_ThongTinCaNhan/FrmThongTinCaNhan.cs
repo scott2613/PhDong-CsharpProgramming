@@ -1,3 +1,4 @@
+// Form của bài mẫu thông tin cá nhân: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Windows.Forms;
 using Lab04.Core;
@@ -6,6 +7,7 @@ namespace BaiMau_ThongTinCaNhan;
 
 public partial class FrmThongTinCaNhan : Form
 {
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmThongTinCaNhan()
     {
         InitializeComponent();

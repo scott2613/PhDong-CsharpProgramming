@@ -1,7 +1,9 @@
+// Lớp nghiệp vụ dùng chung của Lab04C, được tách khỏi giao diện để dễ tái sử dụng và kiểm tra.
 using System;
 
 namespace Lab04.Core;
 
+/// <summary>Kiểm tra lần lượt thông tin bắt buộc của một tài khoản mới.</summary>
 public static class AccountRegistration
 {
     public static bool Validate(
@@ -11,6 +13,7 @@ public static class AccountRegistration
         string? confirmation,
         out string error)
     {
+        // Dừng tại lỗi đầu tiên để Form có thể hướng người dùng sửa đúng trường dữ liệu.
         if (string.IsNullOrWhiteSpace(userName))
         {
             error = "Tên đăng nhập không được để trống.";

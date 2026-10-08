@@ -1,3 +1,4 @@
+// Điểm khởi động của bài mẫu thông tin cá nhân: cấu hình WinForms và mở form chính.
 using System;
 using System.Windows.Forms;
 

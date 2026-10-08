@@ -1,3 +1,4 @@
+// Tệp Designer khai báo, khởi tạo và bố trí các điều khiển trực quan của form.
 using System;
 using System.ComponentModel;
 using System.Drawing;

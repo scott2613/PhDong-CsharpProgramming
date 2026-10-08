@@ -1,3 +1,4 @@
+// Điểm khởi động của Bài 5 đọc số thành chữ: cấu hình WinForms và mở form chính.
 using System;
 using System.Windows.Forms;
 

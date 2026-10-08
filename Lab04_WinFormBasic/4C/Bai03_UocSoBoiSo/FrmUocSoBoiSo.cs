@@ -1,3 +1,4 @@
+// Form của Bài 3 ước số và bội số: nhận thao tác người dùng, kiểm tra dữ liệu và hiển thị kết quả.
 using System;
 using System.Windows.Forms;
 using Lab04.Core;
@@ -6,6 +7,7 @@ namespace Bai03_UocSoBoiSo;
 
 public partial class FrmUocSoBoiSo : Form
 {
+    // Khởi tạo bố cục, thiết lập phím tắt và đăng ký các sự kiện của form.
     public FrmUocSoBoiSo()
     {
         InitializeComponent();

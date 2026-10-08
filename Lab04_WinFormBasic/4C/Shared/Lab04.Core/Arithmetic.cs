@@ -1,3 +1,4 @@
+// Lớp nghiệp vụ dùng chung của Lab04C, được tách khỏi giao diện để dễ tái sử dụng và kiểm tra.
 using System;
 
 namespace Lab04.Core;
@@ -10,6 +11,7 @@ public enum ArithmeticOperation
     Divide
 }
 
+/// <summary>Thực hiện bốn phép tính cơ bản và trả thông báo khi phép toán không hợp lệ.</summary>
 public static class Arithmetic
 {
     public static bool TryCalculate(
@@ -22,6 +24,7 @@ public static class Arithmetic
         result = 0;
         error = string.Empty;
 
+        // Dùng sai số nhỏ thay vì so sánh số thực trực tiếp với 0.
         if (operation == ArithmeticOperation.Divide && Math.Abs(second) < 1e-12)
         {
             error = "Không thể chia cho 0.";
