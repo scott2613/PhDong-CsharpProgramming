@@ -34,7 +34,61 @@ internal static class Program
         Check(PhuongTrinh.SolveQuadratic(1, 0, 1).Contains("vô nghiệm", StringComparison.Ordinal), "Phương trình bậc hai vô nghiệm");
         Check(PhuongTrinh.SolveQuadratic(0, 2, -4).Contains("x = 2", StringComparison.Ordinal), "Bậc hai suy biến về bậc nhất");
 
-        Console.WriteLine($"KIỂM TRA THÀNH CÔNG: {_passed}/19 điều kiện đạt.");
+        Check(MangSoNguyen.TryParse("5 1 4 2 3", out MangSoNguyen? parsedArray, out _), "Nhập mảng số nguyên hợp lệ");
+        Check(!MangSoNguyen.TryParse("1 hai 3", out _, out _), "Từ chối phần tử không phải số nguyên");
+        parsedArray!.SortAscending();
+        Check(parsedArray.ToString() == "1 2 3 4 5", "Sắp xếp mảng tăng dần");
+        parsedArray.SortDescending();
+        Check(parsedArray.ToString() == "5 4 3 2 1", "Sắp xếp mảng giảm dần");
+        Check(parsedArray.FindValue(3) == 2, "Tìm vị trí theo giá trị");
+        Check(parsedArray.ValueAt(4) == 2, "Tìm giá trị theo vị trí");
+        parsedArray.InsertAt(2, 9);
+        Check(parsedArray.ToString() == "5 9 4 3 2 1", "Thêm phần tử tại vị trí chỉ định");
+        Check(parsedArray.RemoveValue(9), "Xóa phần tử theo giá trị");
+        Check(parsedArray.RemoveAt(5) == 1, "Xóa phần tử theo vị trí");
+        Check(parsedArray.ReplaceValue(3, 8) == 1, "Thay thế theo giá trị");
+        Check(parsedArray.ReplaceAt(2, 7) == 4, "Thay thế theo vị trí");
+        Check(parsedArray.Sum == 22, "Tính tổng mảng");
+        Check(parsedArray.EvenSum == 10 && parsedArray.OddSum == 12, "Tính tổng chẵn và tổng lẻ");
+        Check(parsedArray.Maximum == 8 && parsedArray.Minimum == 2, "Tìm giá trị lớn nhất và nhỏ nhất");
+
+        var regularCafeOrder = new CafeOrder
+        {
+            CustomerName = "Nguyễn An",
+            GuestCount = 2,
+            Drink = CafeDrink.CafeDa,
+            Foods = new[] { CafeFood.BanhMyTrung, CafeFood.MyXaoBo }
+        };
+        Check(regularCafeOrder.TryValidate(out _), "Đơn Cafe đầy đủ thông tin");
+        Check(regularCafeOrder.UnitPrice == 70_000, "Tính đơn giá nước uống và thức ăn");
+        Check(regularCafeOrder.Subtotal == 140_000, "Tính tiền theo số khách");
+        var studentCafeOrder = new CafeOrder
+        {
+            CustomerName = "Sinh viên Đông",
+            GuestCount = 2,
+            IsStudent = true,
+            Drink = CafeDrink.CafeDa,
+            Foods = new[] { CafeFood.BanhMyTrung, CafeFood.MyXaoBo }
+        };
+        Check(studentCafeOrder.Discount == 28_000 && studentCafeOrder.Total == 112_000, "Giảm 20 phần trăm cho sinh viên");
+        Check(!new CafeOrder { CustomerName = "", GuestCount = 1, Drink = CafeDrink.CafeDen, Foods = new[] { CafeFood.BanhMyCa } }.TryValidate(out _), "Từ chối tên khách Cafe trống");
+        Check(!new CafeOrder { CustomerName = "An", GuestCount = 0, Drink = CafeDrink.CafeDen, Foods = new[] { CafeFood.BanhMyCa } }.TryValidate(out _), "Từ chối số khách không hợp lệ");
+        Check(!new CafeOrder { CustomerName = "An", GuestCount = 1, Drink = CafeDrink.CafeDen }.TryValidate(out _), "Yêu cầu chọn thức ăn");
+
+        var singleRoom = new HotelBill { CustomerName = "An", Address = "TP HCM", Days = 2, RoomType = HotelRoomType.Single };
+        Check(singleRoom.Total == 600_000, "Tính tiền phòng đơn");
+        var fullServiceRoom = new HotelBill
+        {
+            CustomerName = "Bình", Address = "Đà Nẵng", Days = 3, RoomType = HotelRoomType.Double,
+            Television = true, Internet = true, Karaoke = true, Breakfast = true
+        };
+        Check(fullServiceRoom.Total == 1_165_000, "Tính tiền phòng, tiện nghi và dịch vụ");
+        var breakfastRoom = new HotelBill { CustomerName = "Chi", Address = "Huế", Days = 2, RoomType = HotelRoomType.Triple, Breakfast = true };
+        Check(breakfastRoom.Total == 830_000, "Tính tiền ăn sáng theo số ngày");
+        Check(!new HotelBill { CustomerName = "", Address = "TP HCM", Days = 1 }.TryValidate(out _), "Từ chối tên khách sạn trống");
+        Check(!new HotelBill { CustomerName = "An", Address = "TP HCM", Days = 0 }.TryValidate(out _), "Từ chối số ngày ở không hợp lệ");
+
+        Console.WriteLine($"KIỂM TRA THÀNH CÔNG: {_passed}/45 điều kiện đạt.");
     }
 
     private static void Check(bool condition, string name)
