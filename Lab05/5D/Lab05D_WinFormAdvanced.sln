@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab05D_Launcher", "Lab05D_Launcher\Lab05D_Launcher.csproj", "{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO_Bai01_QuanLyMonHoc", "ADO_Bai01_QuanLyMonHoc\ADO_Bai01_QuanLyMonHoc.csproj", "{95DC0B25-EE4D-4776-96DB-57BA1CD19316}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4F52FD11-658E-A102-6CD3-7D7C16FFA15B}"
@@ -241,6 +243,18 @@ Global
 		{0C836D25-60A6-4322-860D-31884AB1B173}.Release|x64.Build.0 = Release|Any CPU
 		{0C836D25-60A6-4322-860D-31884AB1B173}.Release|x86.ActiveCfg = Release|Any CPU
 		{0C836D25-60A6-4322-860D-31884AB1B173}.Release|x86.Build.0 = Release|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Debug|x64.Build.0 = Debug|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Debug|x86.Build.0 = Debug|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Release|x64.ActiveCfg = Release|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Release|x64.Build.0 = Release|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Release|x86.ActiveCfg = Release|Any CPU
+		{7F16CC95-0B8B-4F62-BF90-5B69DA4DED45}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
