@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaiMau01_ListBox\BaiMau01_ListBox.csproj" />
+    <ProjectReference Include="..\BaiMau02_ComboBox\BaiMau02_ComboBox.csproj" />
+    <ProjectReference Include="..\BaiMau03_PhongBanNhanVien\BaiMau03_PhongBanNhanVien.csproj" />
+    <ProjectReference Include="..\Bai01_UocSo\Bai01_UocSo.csproj" />
+    <ProjectReference Include="..\Bai02_QuanLySinhVien\Bai02_QuanLySinhVien.csproj" />
+    <ProjectReference Include="..\BaiNangCao_XuLyChuoi\BaiNangCao_XuLyChuoi.csproj" />
+    <ProjectReference Include="..\BaiVeNha01_TuDien\BaiVeNha01_TuDien.csproj" />
+    <ProjectReference Include="..\BaiVeNha02_XuLyListBox\BaiVeNha02_XuLyListBox.csproj" />
+    <ProjectReference Include="..\BaiVeNha03_DanhBa\BaiVeNha03_DanhBa.csproj" />
+  </ItemGroup>
+</Project>
