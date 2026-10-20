@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>WinExe</OutputType><UseWindowsForms>true</UseWindowsForms></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Lab05D.WinForms\Lab05D.WinForms.csproj" />
+    <ProjectReference Include="..\BaiMau01_Timer\BaiMau01_Timer.csproj" />
+    <ProjectReference Include="..\BaiMau02_ListView\BaiMau02_ListView.csproj" />
+    <ProjectReference Include="..\BaiMau03_FileDialog\BaiMau03_FileDialog.csproj" />
+    <ProjectReference Include="..\Bai01_QuanLySinhVienListView\Bai01_QuanLySinhVienListView.csproj" />
+    <ProjectReference Include="..\Bai02_QuanLyTaiKhoan\Bai02_QuanLyTaiKhoan.csproj" />
+    <ProjectReference Include="..\BaiNangCao_QuanLyHocVien\BaiNangCao_QuanLyHocVien.csproj" />
+    <ProjectReference Include="..\BaiVeNha01_DemNguoc\BaiVeNha01_DemNguoc.csproj" />
+    <ProjectReference Include="..\ADO_BaiMau_QuanLyKhoa\ADO_BaiMau_QuanLyKhoa.csproj" />
+    <ProjectReference Include="..\ADO_Bai01_QuanLyMonHoc\ADO_Bai01_QuanLyMonHoc.csproj" />
+    <ProjectReference Include="..\ADO_BaiNangCao01_QuanLySinhVien\ADO_BaiNangCao01_QuanLySinhVien.csproj" />
+    <ProjectReference Include="..\ADO_BaiNangCao02_QuanLyDiem\ADO_BaiNangCao02_QuanLyDiem.csproj" />
+    <ProjectReference Include="..\ADO_BaiVeNha_QuanLyLop\ADO_BaiVeNha_QuanLyLop.csproj" />
+  </ItemGroup>
+</Project>
