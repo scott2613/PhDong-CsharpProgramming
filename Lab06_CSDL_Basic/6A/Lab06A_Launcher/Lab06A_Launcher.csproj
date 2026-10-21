@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaiMau_QuanLyKhoa\BaiMau_QuanLyKhoa.csproj" />
+    <ProjectReference Include="..\Bai01_QuanLyMonHoc\Bai01_QuanLyMonHoc.csproj" />
+    <ProjectReference Include="..\BaiNangCao01_QuanLySinhVien\BaiNangCao01_QuanLySinhVien.csproj" />
+    <ProjectReference Include="..\BaiNangCao02_QuanLyDiem\BaiNangCao02_QuanLyDiem.csproj" />
+    <ProjectReference Include="..\BaiVeNha_QuanLyLop\BaiVeNha_QuanLyLop.csproj" />
+    <ProjectReference Include="..\Shared\Lab06A.WinForms\Lab06A.WinForms.csproj" />
+  </ItemGroup>
+</Project>

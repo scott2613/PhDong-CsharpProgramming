@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "Chạy menu Lab06A",
+    "Projects": [
+      {
+        "Path": "Lab06A_Launcher\\Lab06A_Launcher.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
