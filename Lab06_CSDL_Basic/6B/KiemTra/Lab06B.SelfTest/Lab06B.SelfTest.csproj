@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><UseWindowsForms>false</UseWindowsForms></PropertyGroup>
+  <ItemGroup><ProjectReference Include="..\..\Shared\Lab06B.Core\Lab06B.Core.csproj" /></ItemGroup>
+</Project>
